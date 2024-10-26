@@ -2,7 +2,7 @@ set -ex
 
 #MODEL_NAME_OR_PATH=/pubshare/zy/cache/Qwen2.5-Math-1.5B-Instruct
 MODEL_NAME_OR_PATH=$1
-PROMPT_TYPE="qwen25-math-cot"
+PROMPT_TYPE="qwen25-math-pure"
 OUTPUT_DIR=${MODEL_NAME_OR_PATH}/math_eval
 
 SPLIT="test"
