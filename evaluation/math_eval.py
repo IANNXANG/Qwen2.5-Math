@@ -107,7 +107,7 @@ def prepare_data(data_name, args):
 
 def setup(args):
     # load model
-    available_gpus = os.environ["CUDA_VISIBLE_DEVICES"].split(",")
+    available_gpus = os.environ["CUDA_VISIBLE_DEVICES"].split(",") #获取可用的GPU
     if args.use_vllm:
         llm = LLM(
             model=args.model_name_or_path,
@@ -121,7 +121,7 @@ def setup(args):
                 args.model_name_or_path, trust_remote_code=True
             )
     else:
-        llm, tokenizer = load_hf_lm_and_tokenizer(
+        llm, tokenizer = load_hf_lm_and_tokenizer(  #model, tokenizer
             model_name_or_path=args.model_name_or_path,
             load_in_half=True,
             use_fast_tokenizer=True,
@@ -129,7 +129,7 @@ def setup(args):
         )
 
     # infer & eval
-    data_list = args.data_names.split(",")
+    data_list = args.data_names.split(",") # 多个数据集
     results = []
     for data_name in data_list:
         results.append(main(llm, tokenizer, data_name, args))
