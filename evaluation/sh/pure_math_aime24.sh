@@ -1,7 +1,8 @@
 set -ex
 
-PROMPT_TYPE="pure"
-MODEL_NAME_OR_PATH="/pubshare/zy/cache/Qwen2.5-Math-1.5B-Instruct"
+#MODEL_NAME_OR_PATH=/pubshare/zy/cache/Qwen2.5-Math-1.5B-Instruct
+MODEL_NAME_OR_PATH=$1
+PROMPT_TYPE=pure
 OUTPUT_DIR=${MODEL_NAME_OR_PATH}/math_eval
 
 SPLIT="test"
