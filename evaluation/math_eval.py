@@ -26,12 +26,12 @@ def parse_args():
     parser.add_argument("--output_dir", default="./output", type=str)
     parser.add_argument("--prompt_type", default="tool-integrated", type=str)
     parser.add_argument("--split", default="test", type=str)
-    parser.add_argument("--num_test_sample", default=-1, type=int)  # -1 for full data
+    parser.add_argument("--num_test_sample", default=-1, type=int)  # -1 for full data -1使用全部数据
     parser.add_argument("--seed", default=0, type=int)
     parser.add_argument("--start", default=0, type=int)
     parser.add_argument("--end", default=-1, type=int)
     parser.add_argument("--temperature", default=0, type=float)
-    parser.add_argument("--n_sampling", default=1, type=int)
+    parser.add_argument("--n_sampling", default=1, type=int)  #只进行 一次采样
     parser.add_argument("--top_p", default=1, type=float)
     parser.add_argument("--max_tokens_per_call", default=2048, type=int)
     parser.add_argument("--shuffle", action="store_true")
