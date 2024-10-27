@@ -2,7 +2,7 @@ set -ex
 
 #MODEL_NAME_OR_PATH=/pubshare/zy/cache/Qwen2.5-Math-1.5B-Instruct
 MODEL_NAME_OR_PATH=$1
-PROMPT_TYPE="direct"
+PROMPT_TYPE="solution"
 OUTPUT_DIR=${MODEL_NAME_OR_PATH}/math_eval
 
 SPLIT="test"
@@ -24,6 +24,7 @@ python3 -u math_eval.py \
     --top_p 1 \
     --start 0 \
     --end -1 \
+    --use_vllm \
     --save_outputs \
     --overwrite \
 
@@ -44,5 +45,6 @@ python3 -u math_eval.py \
     --top_p 1 \
     --start 0 \
     --end -1 \
+    --use_vllm \
     --save_outputs \
     --overwrite \
