@@ -261,6 +261,9 @@ def math_equal(
 
 def math_equal_process(param):
     return math_equal(param[-2], param[-1])
+# idx：一个索引值，用于标识当前处理的样本。
+# pred：一个预测的数学表达式，这是模型生成的答案。  -2
+# sample['gt']：一个真实的数学表达式，这是问题的正确答案。  -1
 
 
 def numeric_equal(prediction: float, reference: float):
